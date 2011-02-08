@@ -10,6 +10,9 @@ import ScriptingBridge
 
 import os
 
+## change this to the email address for your Entourage account
+MY_EMAIL = "user@example.com"
+
 # enum EntourageEFBt {
 #         EntourageEFBtBusy = 'eSBu' /* busy */,
 #         EntourageEFBtFree = 'eSFr' /* free */,
@@ -60,8 +63,7 @@ for cal in exchangeAccount.calendars():
                             attendees = [attendees]
                             
                         for attendee in attendees:
-                            # print attendee
-                            if "brian.lalor@pearson.com" in attendee.lower():
+                            if MY_EMAIL in attendee.lower():
                                 if FREE_BUSY_STATUS[evt.freeBusyStatus()] in ("free", "tentative"):
                                     attendee.params['PARTSTAT'] = "TENTATIVE"
                                 else:
