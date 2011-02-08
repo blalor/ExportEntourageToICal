@@ -71,6 +71,6 @@ for cal in exchangeAccount.calendars():
             
         
     
-ofp = open(os.path.expand("~/Sites/entourage.ics"), "wb")
+ofp = open(os.path.expanduser("~/Sites/entourage.ics"), "wb")
 ofp.write(ical.as_string())
 ofp.close()
